@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}넌 볼란치가 맞아{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    {% if user.is_authenticated %}
+      {{ user.display_name|default:user.username }} |
+      <a href="{% url 'accounts:dashboard' %}">대시보드</a> |
+      <a href="{% url 'accounts:logout' %}">로그아웃</a>
+    {% else %}
+      <a href="{% url 'accounts:login' %}">로그인</a> |
+      <a href="{% url 'accounts:signup' %}">회원가입</a>
+    {% endif %}
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

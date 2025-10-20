@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}로그인{% endblock %}
+{% block content %}
+<h1>로그인</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  <p>아이디: {{ form.username }}</p>
+  <p>비밀번호: {{ form.password }}</p>
+  <button type="submit">로그인</button>
+</form>
+{% endblock %}
