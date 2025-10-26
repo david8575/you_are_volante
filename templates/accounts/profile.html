@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}프로필{% endblock %}
+{% block content %}
+<h1>내 프로필</h1>
+<p><strong>아이디:</strong> {{ user_obj.username }}</p>
+<p><strong>표시 이름:</strong> {{ user_obj.display_name|default:"(없음)" }}</p>
+<p><strong>이메일:</strong> {{ user_obj.email }}</p>
+<p><strong>소개:</strong> {{ profile.bio|default:"(소개글 없음)" }}</p>
+
+<p><a href="{% url 'accounts:profile_edit' %}">프로필 수정</a></p>
+{% endblock %}
