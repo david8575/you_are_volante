@@ -31,7 +31,7 @@ class Player(models.Model):
         ('RB', 'right back'),
         ('GK', 'goal keeper'), 
     ]
-
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='players')
     player_name = models.CharField(max_length=50)
     player_number = models.IntegerField()
     player_main_position = models.CharField(max_length=10, choices=PLAYER_POSITION_CHOICES)
@@ -41,7 +41,9 @@ class Player(models.Model):
         db_table = 'players'
         verbose_name = '선수'
         verbose_name_plural = '선수들'
-        unique_together = ['team', 'player_number']
+        constraints = [
+            models.UniqueConstraint(fields=['team', 'player_number'], name='unique_player_number_per_team')
+        ]
     
     def __str__(self):
         return f"{self.player_name} ({self.team.team_name})"
