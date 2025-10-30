@@ -1,5 +1,7 @@
 .venv
 
-backend/project/app/__pycache__
-backend/project/db.sqlite3
-backend/project/project/__pycache__
+backend/_project/db.sqlite3
+backend/_project/_project/__pycache__
+backend/_project/accounts/__pycache__
+backend/_project/formations/__pycache__
+backend/_project/teams/__pycache__
