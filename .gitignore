@@ -5,3 +5,12 @@ backend/_project/_project/__pycache__
 backend/_project/accounts/__pycache__
 backend/_project/formations/__pycache__
 backend/_project/teams/__pycache__
+
+
+frontend/app/node_modules/
+frontend/app/build/
+frontend/app/.env
+frontend/app/.env.local
+
+.DS_Store
+*.log
