@@ -3,8 +3,11 @@
 backend/_project/db.sqlite3
 backend/_project/_project/__pycache__
 backend/_project/accounts/__pycache__
+backend/_project/accounts/migrations/__pycache__
 backend/_project/formations/__pycache__
+backend/_project/formations/migrations/__pycache__
 backend/_project/teams/__pycache__
+backend/_project/teams/migrations/__pycache__
 
 
 frontend/app/node_modules/
