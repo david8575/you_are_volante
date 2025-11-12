@@ -3,8 +3,12 @@ from .models import Team, TeamMember
 
 
 class TeamMemberSerializer(serializers.ModelSerializer):
-    position_display = serializers.CharField(
-        source='get_position_display',
+    main_position_display = serializers.CharField(
+        source='get_main_position_display',
+        read_only=True
+    )
+    sub_position_display = serializers.CharField(
+        source='get_sub_position_display',
         read_only=True
     )
 
@@ -14,7 +18,10 @@ class TeamMemberSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'number',
-            'position',
+            'main_position',
+            'main_position_display'
+            'sub_position',
+            'sub_position_display'
             'position_display',
             'created_at',
             'updated_at'

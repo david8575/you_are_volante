@@ -43,10 +43,17 @@ class TeamMember(models.Model):
 
     name = models.CharField(max_length=50, verbose_name="선수이름")
     number = models.PositiveIntegerField(verbose_name='등번호')
-    position = models.CharField(
+    main_position = models.CharField(
         max_length=3,
         choices=POSITIONS,
-        verbose_name='포지션'    
+        verbose_name='주포지션'    
+    )
+    sub_position = models.CharField(
+        max_length=3,
+        choices=POSITIONS,
+        verbose_name='부포지션',
+        blank=True,
+        null=True 
     )
     team = models.ForeignKey(
         Team,
